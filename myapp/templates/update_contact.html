@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1 style="text-align: center;">Update contact</h1>
+
+<form method="post" style="width: 50%;">
+    {% csrf_token %}
+
+    {% for field in contact_form %}
+    <div style="padding: 15px;">
+        {{ field.label }}: {{ field }}
+    </div>
+    {% endfor %}
+
+    <button type="submit">Update contact</button>
+</form>
+
+{% endblock %}
